@@ -1,0 +1,29 @@
+<div class="row__movie">
+    <h3 class="row__movie-title">
+        <a [routerLink]="'/movies'">
+            <span>
+                <ng-content></ng-content>
+            </span>
+            <span class="row__showmore">
+                Show all
+                <i class="fas fa-chevron-right"></i>
+            </span>
+        </a>
+    </h3>
+    <div class="row__movie-wrp">
+        <div class="row__slider--mask left" appBtnPrev>
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="row__slider--mask right" appBtnNext>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="swiper">
+            <div class="wrapper" *ngIf="listMovie$ | async as list; else noList">
+                <div class="slider" *ngFor="let item of list.items">
+                    <app-movie-item [type]="type" [movieInPage]="item"></app-movie-item>
+                </div>
+            </div>
+            <ng-template #noList>No list</ng-template>
+        </div>
+    </div>
+</div>

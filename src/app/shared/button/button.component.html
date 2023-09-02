@@ -1,0 +1,13 @@
+<ng-container>
+    <a *ngIf="typeBtn === 'play'" class="btn btn-play">
+        <i class="fas fa-play"></i>
+        <span>Play</span>
+    </a>
+    <button *ngIf="typeBtn === 'info'" class="btn btn-info">
+        <i class="far fa-dot-circle"></i>
+        <span>More info</span>
+    </button>
+    <button *ngIf="typeBtn === undefined" class="btn-circle">
+        <ng-content></ng-content>
+    </button>
+</ng-container>

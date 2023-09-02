@@ -1,0 +1,123 @@
+.row__movie{
+    display: block;
+    padding: 2rem 0;
+    background: rgb(20 20 20);
+}
+.row__movie-title{
+    margin-bottom: 1rem;
+    padding: 0 4%;
+    font-size: 2rem;
+    text-align: left;
+    display: inline-block;
+}
+.row__movie-title>a{
+    color: #f2f2f2;
+    text-decoration: none;
+}
+.row__showmore{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+    transition: max-width .45s,opacity .45s,transform .75s,-webkit-transform .75s;
+}
+.row__showmore>i{
+    margin-left: 0.4rem;
+    font-size: 1.2rem;
+}
+.row__movie-title:hover .row__showmore{
+    opacity: 1;
+    transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+}
+.row__movie-wrp{
+    display: flex;
+    padding: 1.2rem 0;
+    position: relative;
+}
+.row__slider--mask{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
+    width: 4%;
+    height: 100%;
+    background: rgba(16,16,17,.5);
+    opacity: 0.2;
+    z-index: 1;
+}
+.row__slider--mask:hover{
+    opacity: 1;
+}
+.row__slider--mask>i{
+    opacity: 0.2;
+    font-size: 0.8rem;
+    transition: all ease-in-out 0.4s;
+}
+.row__slider--mask:hover>i{
+    font-size: 2.8rem;
+    opacity: 1;
+}
+.row__slider--mask.left{
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.row__slider--mask.right{
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.swiper{
+    padding: 0 4%;
+    transition: all ease-in-out 0.25s;
+}
+.row__movie-wrp:hover .swiper{
+    padding: 0 1%;
+}
+.wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.slider {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 24%;
+    height: 100%;
+    transition: transform .3s ease-out, opacity .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.slider:nth-child(1n) {
+    -webkit-transform-origin: initial;
+    transform-origin: initial;
+}
+
+.slider:nth-child(4n+1) {
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+
+.slider:nth-child(4n+4) {
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+/* .slider:hover {
+    transform-origin: initial;
+    transform: scale(1.2);
+    z-index: 1;
+} */

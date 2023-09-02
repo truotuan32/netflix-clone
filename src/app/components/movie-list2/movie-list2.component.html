@@ -1,0 +1,29 @@
+<div class="main">
+    <h4>Dữ liệu phim miễn phí vĩnh viễn. Cập nhật nhanh, chất lượng cao, ổn định và lâu dài. Tốc độ phát cực nhanh với
+        đường truyền băng thông cao, đảm bảo đáp ứng được lượng xem phim trực tuyến lớn. Đồng thời giúp nhà phát triển
+        website phim giảm thiểu chi phí của các dịch vụ lưu trữ và stream.</h4>
+    <div class="movies" *ngIf="listMovie$ | async as listMovie">
+        <div class="box__title">
+            <span class="name">Name</span>
+            <span class="year">Year</span>
+            <span class="modif">Modified</span>
+        </div>
+        <div class="box__item" *ngIf="listMovie.items as list">
+            <app-movie-item2 *ngFor="let item of list" [movieInPage]="item"></app-movie-item2>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="nav control--icon prev" (click)="handlerPrev()" [class.active]="pageContent.pageActive !== 1">
+            <span><i class="fas fa-long-arrow-alt-left"></i></span>
+        </div>
+        <div class="nav pages">
+            <span *ngFor="let pageNumber of pageContent.sizePage" (click)="setPageNumberFunc(pageNumber)"
+                [class.active]="pageNumber === pageContent.pageActive">
+                {{pageNumber}}
+            </span>
+        </div>
+        <div class="nav control--icon next" (click)="handlerNext()">
+            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+        </div>
+    </div>
+</div>

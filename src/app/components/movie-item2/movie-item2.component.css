@@ -1,0 +1,48 @@
+.main {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 0.5px solid #272722;
+    padding: 1rem 2rem;
+}
+
+.box__info {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.box__info--img {
+    max-width: 4.8rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+.box__info--img>img {
+    width: 100%;
+    height: auto;
+}
+
+.box__info--text {
+    margin-left: 1rem;
+}
+
+.box__info--text>a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: all ease 0.25s;
+}
+
+.box__info--text>a:hover {
+    opacity: 0.8;
+}
+
+.box__year,
+.box__modified {
+    flex-basis: 25%;
+}
+
+.box__year {}
+
+.box__modified {}

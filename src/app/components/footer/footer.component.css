@@ -1,0 +1,35 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2.6rem 4rem;
+    background-color: #141414;
+}
+
+.footer__question {
+    color: #f2f2f2;
+    font-size: 1.6rem;
+}
+
+.footer__linkGrid {
+    margin: 2rem 0;
+}
+
+.foo__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.foo__list--item {
+    padding: 0.8rem 0rem;
+}
+
+.foo__link {
+    color: #f2f2f2;
+    font-size: 1.4rem;
+}
+
+.footer__localBrand {
+    font-size: 1.2rem;
+    color: #969696;
+}

@@ -1,0 +1,76 @@
+.btn {
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    background-color: rgba(109, 109, 110, .7);
+    color: #f2f2f2;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: 0;
+    margin-top: 1.6rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+
+.btn-play {
+    margin-left: 0;
+    background-color: #e50914;
+    color: #f2f2f2;
+}
+
+.btn-play:hover {
+    background-color: #cc0812;
+}
+
+.btn-info {}
+
+.btn-info:hover {
+    background-color: #6d6d6e;
+}
+
+.btn>span {
+    margin-left: 0.8rem;
+}
+
+
+.btn-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 0.8rem;
+    margin: 0 0.8rem 1.2rem 0;
+    border: 1px solid #f2f2f2;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #f2f2f2;
+    background-color: transparent;
+    font-size: 1.4rem;
+    transition: all ease-in-out 0.2s;
+}
+
+.btn-circle:hover{
+    background-color: #f2f2f2;
+    color: #141414;
+}
+
+/*mobile & tablet*/
+@media (max-width: 1023px) {
+    .btn {
+        font-size: 13px;
+        padding: 10px 14px;
+        min-width: 120px;
+    }
+}
+
+/*tablet*/
+@media (min-width: 740px) and (max-width: 1023px) {}
+
+/*mobile*/
+@media (max-width: 739px) {}

@@ -1,0 +1,36 @@
+<div *ngIf="movieDetail$|async as movieDetail">
+    <div class="modal__overlay" [class.active]="showInfo">
+        <div class="modal__content" [class.active]="showInfo">
+            <button class="modal__closebtn" (click)="closeLayer()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal__img--wrp">
+                <div class="modal__img--shadow"></div>
+                <img src="{{movieDetail.movie?.poster_url}}" alt="">
+                <div class="modal__img--buttons">
+                    <a [routerLink]="'/intro'">
+                        <app-button [typeBtn]="'play'"></app-button>
+                    </a>
+                    <a [routerLink]="['/movies', movieDetail.movie?.slug]">
+                        <button class="modal__btn--circle">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="modal__info--wrp">
+                <h3 class="modal__info--title">{{movieDetail.movie?.name}}</h3>
+                <p class="modal__info--description" [innerHTML]="movieDetail.movie?.content"></p>
+                <hr class="modal__info--line">
+                <h4 class="modal__info--othertitle">
+                    Info on
+                    <b>{{movieDetail.movie?.name}}</b>
+                </h4>
+                <p class="modal__info--description">Trạng thái: {{movieDetail.movie?.episode_current}}</p>
+                <p class="modal__info--description">Số tập: {{movieDetail.movie?.episode_total}}</p>
+                <p class="modal__info--description">Thời lượng: {{movieDetail.movie?.time}}</p>
+                <p class="modal__info--description">Ngôn ngữ: {{movieDetail.movie?.lang}}</p>
+            </div>
+        </div>
+    </div>
+</div>

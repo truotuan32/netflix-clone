@@ -1,0 +1,73 @@
+<div class="navbar" [class.navbar__fixed]="navBarFixed" headerBackground>
+    <a [routerLink]="'/intro'">
+        <img class="navbar__logo" src="../../../assets/image/logo.png" alt="home">
+    </a>
+    <ul class="navbar__primary">
+        <li class="navbar__primary--link">
+            <a [routerLink]="'/home'">Home</a>
+        </li>
+        <li class="navbar__primary--link">
+            <a [routerLink]="'/home'">TV Series</a>
+        </li>
+        <li class="navbar__primary--link">
+            <a [routerLink]="'/movies'">Movies</a>
+        </li>
+        <li class="navbar__primary--link">
+            <a [routerLink]="'/home'">New & Popular</a>
+        </li>
+    </ul>
+    <div class="navbar__mobile">
+        <div class="navbartoggle" (click)="handleShowNavMobile()">
+            <span>Discover</span>
+            <i class="fas fa-sort-down"></i>
+        </div>
+        <ul class="navbar__mobile--list" [class.active]="showNavMobile" (click)="handleShowNavMobile()">
+            <li class="navbar__mobile--link">
+                <a [routerLink]="'/home'">Home</a>
+            </li>
+            <li class="navbar__mobile--link">
+                <a [routerLink]="'/home'">TV Series</a>
+            </li>
+            <li class="navbar__mobile--link">
+                <a [routerLink]="'/home'">Movies</a>
+            </li>
+            <li class="navbar__mobile--link">
+                <a [routerLink]="'/home'">New & Popular</a>
+            </li>
+            <li class="navbar__mobile--link">
+                <a [routerLink]="'/home'">My List</a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar__secondary">
+        <div class="navbar__nav">
+            <div class="search">
+                <input class="search--input" [class.search--active]="searchInputActive" type="text"
+                    placeholder="Search title, people,..."
+                    [(ngModel)]="valInputSearch"
+                    (keyup.enter)="redirectToSearchPage()"    
+                >
+                <div class="search--toggle" (click)="showSearchInput()">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="search--clear" 
+                    [class.active]="valInputSearch.length > 0 ? true:false"
+                    (click)="valInputSearch = ''"
+                >
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+        <div class="navbar__nav">
+            <div class="profile" [class.active]="showProfileActive" (click)="showProfileContent()">
+                <img src="../../../assets/image/avatar.jpg" alt="">
+                <i class="fas fa-sort-down"></i>
+                <ul class="profile--content" [class.active]="showProfileActive">
+                    <li class="content--link">
+                        <a [routerLink]="'/'">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

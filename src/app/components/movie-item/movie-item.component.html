@@ -1,0 +1,25 @@
+<div class="row__poster" [class.high]="type === 'high'" *ngIf="movieInPage">
+    <img *ngIf="type === 'md'" class="row__poster--img"
+        src="https://img.ophim8.cc/uploads/movies/{{movieInPage?.poster_url}}" />
+    <img *ngIf="type === 'high'" class="row__poster--img high"
+        src="https://img.ophim8.cc/uploads/movies/{{movieInPage?.thumb_url}}" />
+    <div class="row__poster--info">
+        <div class="poster-info__icon">
+            <a [routerLink]="'/intro'"><app-button><i class="fas fa-play"></i></app-button></a>
+            <a [routerLink]="['/movies', movieInPage.slug]"><app-button><i class="fas fa-plus"></i></app-button></a>
+            <div (click)="addLayerInfo()">
+                <app-button><i class="fas fa-chevron-down"></i></app-button>
+            </div>
+        </div>
+        <div class="poster-info__title">
+            <h3>{{movieInPage.name}}</h3>
+        </div>
+        <div class="poster-info__type">
+            <!-- origin name -->
+            <span>{{movieInPage.origin_name}}</span>
+            <!-- time -->
+            <span>{{movieInPage.modified?.time | date:'shortDate'}}</span>
+        </div>
+    </div>
+</div>
+<div #dynamicLayerInfo></div>

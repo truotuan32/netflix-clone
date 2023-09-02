@@ -1,0 +1,20 @@
+<div *ngIf="movieDetail$ | async as movieDetail">
+    <div id="banner" class="banner" style="background-image: url({{movieDetail.movie?.poster_url}});">
+        <div class="banner__content">
+            <h1 class="banner__content--title">{{movieDetail.movie?.name}}</h1>
+            <div class="banner__buttons">
+                <a [routerLink]="'/intro'">
+                    <app-button [typeBtn]="'play'"></app-button>
+                </a>
+                <div (click)="addLayerInfo()">
+                    <app-button [typeBtn]="'info'"></app-button>
+                </div>
+            </div>
+            <p class="banner__content--description" [innerHTML]="movieDetail.movie?.content"></p>
+        </div>
+        <div class="banner__panel"></div>
+        <div class="banner__bottom--shadow"></div>
+    </div>
+</div>
+
+<div #dynamicLayerInfo></div>

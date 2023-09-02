@@ -1,0 +1,34 @@
+<div class="auth">
+    <div class="auth__bgr"></div>
+    <div class="auth__layer"></div>
+    <a href="" class="auth__logo">
+        <img src="../../../../assets/image/logo.png" alt="">
+    </a>
+    <div class="auth__content" style="opacity: 1;
+    top: 50%; height: 100%;">
+        <h2 class="auth__content--title" style="opacity: 1;
+        transform: none;">Sign Up</h2>
+        <small class="auth__content--disclimer" style="opacity: 1;
+        transform: none;">Pay attention: this is not the original Netflix sign in. Don't insert
+            your real credentials here!</small>
+        <form action="" class="sign-in__form">
+            <div class="sign-in__form--inpt">
+                <input class="inputField" type="text" placeholder="Your name">
+            </div>
+            <div class="sign-in__form--inpt">
+                <input class="inputField" type="text" placeholder="Email">
+            </div>
+            <div class="sign-in__form--inpt">
+                <input class="inputField" type="password" placeholder="Password">
+            </div>
+            <div class="sign-in__form--inpt">
+                <input class="inputField" type="password" placeholder="Repeat Password">
+            </div>
+            <button class="sign-in__form--btn signIn" [routerLink]="'/intro'">Sign Up</button>
+        </form>
+        <hr class="auth__content--divier">
+        <small class="auth__content--toSignUp">Do you already have an account?
+            <a [routerLink]="['/login', 'signin']">Sign In</a>
+        </small>
+    </div>
+</div>

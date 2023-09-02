@@ -1,0 +1,18 @@
+<div class="main">
+    <div class="box__info">
+        <div class="box__info--img">
+            <!-- thumbnail -->
+            <img src="https://img.ophim8.cc/uploads/movies/{{movieInPage.thumb_url}}" alt="">
+        </div>
+        <div class="box__info--text">
+            <a [routerLink]="['/movies', movieInPage.slug]">
+                <!-- name -->
+                <h3>{{movieInPage.name}}</h3>
+                <!-- origin_name -->
+                <h4>({{movieInPage.origin_name}})</h4>
+            </a>
+        </div>
+    </div>
+    <h3 class="box__year">{{movieInPage.year}}</h3>
+    <h3 class="box__modified">{{movieInPage.modified?.time | date:'medium'}}</h3>
+</div>

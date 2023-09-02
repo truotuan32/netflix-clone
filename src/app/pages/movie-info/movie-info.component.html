@@ -1,0 +1,79 @@
+<div>
+    <app-header></app-header>
+
+    <div class="main" *ngIf="movieInfo$ | async as movieInfo">
+        <div class="wrp__info">
+            <div class="wrp__info--img">
+                <img src="{{movieInfo.movie?.thumb_url}}" alt="">
+            </div>
+            <div class="wrp__info--text">
+                <div class="heading">
+                    <h3>{{movieInfo.movie?.name}}</h3>
+                    <h4>{{movieInfo.movie?.origin_name}}</h4>
+                </div>
+                <div class="info">
+                    <div>
+                        <span>Số tập</span>
+                        <span>{{movieInfo.movie?.episode_total}}</span>
+                    </div>
+                    <div>
+                        <span>Năm Phát Hành</span>
+                        <span>{{movieInfo.movie?.year}}</span>
+                    </div>
+                    <div>
+                        <span>Chất Lượng</span>
+                        <span>{{movieInfo.movie?.quality}}</span>
+                    </div>
+                    <div>
+                        <span>Ngôn Ngữ</span>
+                        <span>{{movieInfo.movie?.lang}}</span>
+                    </div>
+                    <div>
+                        <span>Đạo Diễn</span>
+                        <span *ngFor="let item of movieInfo.movie?.director">{{item}}</span>
+                    </div>
+                    <div>
+                        <span>Diễn Viên</span>
+                        <span *ngFor="let item of movieInfo.movie?.actor">{{item}}</span>
+                    </div>
+                    <div>
+                        <span>Thể Loại</span>
+                        <span *ngFor="let item of movieInfo.movie?.category">{{item.name}}</span>
+                    </div>
+                    <div>
+                        <span>Quốc Gia</span>
+                        <span *ngFor="let item of movieInfo.movie?.country">{{item.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrp__content">
+            <div class="wrp__content--heading" (click)="handlerShowContentMovie()">
+                <h3>Nội dung</h3>
+                <i *ngIf="isShowContentMovie" class="fas fa-chevron-down"></i>
+                <i *ngIf="!isShowContentMovie" class="fas fa-chevron-up"></i>
+            </div>
+            <div *ngIf="isShowContentMovie" class="wrp__content--text" [innerHTML]="movieInfo.movie?.content">
+                <!-- {{movieInfo.movie?.content}} -->
+            </div>
+        </div>
+        <div class="wrp__episodes">
+            <div class="wrp__episodes--heading" (click)="handlerShowEpisode()">
+                <h3>Xem phim</h3>
+                <i *ngIf="isShowEpisode" class="fas fa-chevron-down"></i>
+                <i *ngIf="!isShowEpisode" class="fas fa-chevron-up"></i>
+            </div>
+            <div *ngIf="isShowEpisode" class="wrp__episodes--link">
+                <div *ngIf="movieInfo.episodes">
+                    <ul >
+                        <li *ngFor="let link of movieInfo.episodes[0].server_data">
+                            <a href="{{link.link_embed}}" target="_blank">{{link.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

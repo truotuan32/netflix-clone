@@ -1,0 +1,133 @@
+.main {
+    margin-top: 7rem;
+    padding: 2rem 4rem;
+    background-color: #141414;
+}
+
+.main>div {
+    padding: 2rem;
+    background: #333;
+    border-radius: 4px;
+    margin-top: 2rem;
+}
+
+.wrp__info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.wrp__info--img {
+    flex-basis: 30%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wrp__info--img>img {
+    width: 100%;
+    height: auto;
+}
+
+.wrp__info--text {
+    flex-basis: 70%;
+    margin-left: 2rem;
+}
+
+.heading {
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.heading>h4 {
+    opacity: 0.8;
+}
+
+.info>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 1.6rem;
+    color: #f2f2f2;
+}
+
+.info>div {
+    padding: 0.8rem 0rem;
+    border-top: 1px solid #141414;
+}
+
+.info>div>span:first-child {
+    flex-basis: 30%;
+}
+.info>div>span:not(:first-child){
+    margin-right: 1rem;
+}
+.wrp__content {
+    color: #f2f2f2;
+}
+
+.wrp__content--heading {
+    background-color: #141414;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrp__content--heading>h3 {
+    font-size: 1.6rem;
+}
+
+.wrp__content--text {
+    padding: 0.4rem 1rem;
+    margin-top: 1.4rem;
+    font-size: 1.4rem;
+}
+
+.wrp__episodes {
+    color: #f2f2f2;
+}
+
+.wrp__episodes--heading {
+    background-color: #141414;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrp__episodes--heading>h3 {
+    font-size: 1.6rem;
+}
+
+.wrp__episodes--link {}
+
+.wrp__episodes--link>div>ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.wrp__episodes--link>div>ul>li {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    min-width: 4.8rem;
+}
+
+.wrp__episodes--link>div>ul>li>a {
+    display: block;
+    font-size: 1.4rem;
+    text-decoration: none;
+    padding: 0.6rem 1.6rem;
+    background-color: #141414;
+    border-radius: 4px;
+    color: #f2f2f2;
+}
+
+.wrp__episodes--link>div>ul>li>a:hover {
+    opacity: 0.8;
+}
