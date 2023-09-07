@@ -1,4 +1,5 @@
 # MyApp
+https://camo.githubusercontent.com/5a1dc958469de1d7648247524aad4d3ee2cdfb6e2b5da75ba0bbc499973c4118/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f54683357616c6c2f6173736574732d63646e2f46616b65666c69782f46616b65666c69785f726561646d652e706e67
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
